@@ -41,7 +41,7 @@ sudo systemctl enable httpd
 ```
 
 ---
-![screenshot](./AWS-RDS Proj/1.PNG)
+![screenshot](./AWS-RDS Proj/1.png)
 ### Step 4: Create Test Data
 ```bash
 cd /var/www/html
