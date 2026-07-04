@@ -42,6 +42,7 @@ sudo systemctl enable httpd
 
 ---
 ![screenshot](./screenshot/1.PNG)
+
 ### Step 4: Create Test Data
 ```bash
 cd /var/www/html
@@ -70,6 +71,7 @@ http://<EC2-Public-IP>
 
 ---
 ![screenshot](./screenshot/2.PNG)
+
 ### Step 5: Add Tag to EC2
 | Key    | Value |
 |-------|-------|
@@ -77,6 +79,7 @@ http://<EC2-Public-IP>
 
 ---
 ![screenshot](./screenshot/3.PNG)
+
 ## 🗄️ PART 2: Launch RDS Instance
 
 ### Step 6: Create RDS Database
@@ -95,6 +98,7 @@ mysql -h <RDS-endpoint> -u admin -p
 
 ---
 ![screenshot](./screenshot/4.PNG)
+
 ### Step 8: Create Test Database & Data
 ```sql
 CREATE DATABASE backup_test;
@@ -114,6 +118,7 @@ SELECT * FROM users;
 
 ---
 ![screenshot](./screenshot/5.PNG)
+
 ### Step 9: Add Tag to RDS
 | Key    | Value |
 |-------|-------|
@@ -121,6 +126,7 @@ SELECT * FROM users;
 
 ---
 ![screenshot](./screenshot/6.PNG)
+
 ## 🔐 PART 3: AWS Backup Setup
 
 ### Step 10: Open AWS Backup
@@ -130,12 +136,15 @@ Search **AWS Backup** in AWS Console.
 
 ### Step 11: Create Backup Vault
 - **Vault Name:** MyProjectVault  
-- **Encryption:** Default  
+- **Encryption:** Default
+- 
 ![screenshot](./screenshot/7.PNG)
+
 ---
 
 ### Step 12: Create Backup Plan
-- **Plan Name:** EC2-RDS-Backup-Plan  
+- **Plan Name:** EC2-RDS-Backup-Plan
+- 
 ![screenshot](./screenshot/8.PNG)
 ![screenshot](./screenshot/9.PNG)
 ---
@@ -155,6 +164,7 @@ Search **AWS Backup** in AWS Console.
 
 ---
 ![screenshot](./screenshot/10.PNG)
+
 ## ▶️ PART 4: On-Demand Backup (Testing)
 
 1. Go to **AWS Backup → Protected Resources**
@@ -171,6 +181,7 @@ Navigate to:
 AWS Backup → Backup Jobs
 ```
 ![screenshot](./screenshot/11.PNG)
+
 Status should be **Completed**.
 
 ---
@@ -186,6 +197,7 @@ You should see:
 
 ---
 ![screenshot](./screenshot/12.PNG)
+
 ## 🧪 Final Outcome
 ✔ Automated daily backups  
 ✔ Tag-based resource selection  
